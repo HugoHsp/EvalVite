@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eval Vite</title>
+</head>
+<body>
+<header>
+    <nav class="w-full" x-data="Burger">
+        <div class="container mx-auto px-8">
+            <div class="flex items-center h-24 gap-6 justify-between relative">
+                <div class="relative h-full flex items-center">
+                    <img src="./images/logo.png" alt="" class="h-2/3">
+                </div>
+                <div class="gap-12 hidden sm:flex">
+                    <a href="#home" class="nav-link">Accueil</a>
+                    <a href="#about" class="nav-link">À propos</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#competences" class="nav-link">Compétences</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="block sm:hidden relative z-50 cursor-pointer" x-on:click="toggle()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+                </div>
+            </div>
+        </div>
+        <div x-show="open" x-transition class="fixed left-0 top-0 h-screen w-full bg-[rgba(0,0,0,.5)] z-40">
+            <div class="burger-menu h-full w-1/2 shadow-2xl text-[var(--font)] bg-white px-4">
+                <div class="grid gap-4">
+                    <h1 class="text-3xl font-bold pt-4">Navigation</h1>
+                    <a href="#home">
+                        <div class="flex items-end gap-3 hover:bg-gray-100 p-3" x-on:click="toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z" class="-translate-y-0.5"></path></svg>
+                            <span class="burger-link">Accueil</span>
+                        </div>
+                    </a>
+                    <a href="#about">
+                        <div class="flex items-end gap-3 hover:bg-gray-100 p-3" x-on:click="toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z" class="-translate-y-0.5"></path></svg>
+                            <span class="burger-link">À propos</span>
+                        </div>
+                    </a>
+                    <a href="#portfolio">
+                        <div class="flex items-end gap-3 hover:bg-gray-100 p-3 rounded-md" x-on:click="toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path></svg>
+                            <span class="burger-link">Portfolio</span>
+                        </div>
+                    </a>
+                    <a href="#competences">
+                        <div class="flex items-end gap-3 hover:bg-gray-100 p-3 rounded-md" x-on:click="toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path></svg>
+                            <span class="burger-link">Compétences</span>
+                        </div>
+                    </a>
+                    <a href="#contact">
+                        <div class="flex items-end gap-3 hover:bg-gray-100 p-3 rounded-md" x-on:click="toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path></svg>
+                            <span class="burger-link">Contact</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="container mx-auto px-8 relative">
+        <div class="flex flex-col-reverse h-[calc(100vh-96px)] w-full sm:flex-row">
+            <div class="basis-1/2 flex flex-col justify-center items-center gap-3">
+                <div class="grid gap-3 relative">
+                    <span class="absolute -top-32 left-0 h-96 w-96 rounded-full bg-[var(--primary)] opacity-[10%] blur-[50px] block -z-10"></span>
+                    <h1 class="text-5xl font-bold">HESPELLE Hugo</h1>
+                    <h2 class="text-xl text-[var(--second-font)] font-thin">Métiers du multimédia et de l'internet</h2>
+                    <a href="#about">
+                        <button class="cta mt-4">Découvrez-moi</button>
+                    </a>
+                </div>
+            </div>
+            <div class="basis-1/2 flex flex-col justify-center items-center gap-3">
+                <img src="./images/moi.jpeg" alt="" class="rounded-full w-2/3 shadow-[25px_10px_50px_rgba(0,0,0,.2)]">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="mt-12 sm:mt-0">
+    <div class="container mx-auto px-8">
+        <div class="flex flex-col gap-32 sm:flex-row">
+            <div class="basis-1/2">
+                <h1 class="text-4xl font-bold text-center">À propos</h1>
+                <p class="text mt-8">
+                    Je m’appelle Hugo, j’ai 20 ans, et je suis passionné par le développement web.<br><br>
+                    Je me suis lancé en décembre 2020, et j’ai eu l’occasion de développer mes compétences et de les affiner ces dernières années.<br>Étudiant en troisième année de BUT MMI (Métiers du multimédia et de l’internet), et alternant au sein de l'entreprise Waigéo, je possède de solides connaissances en langage de programmation (HTML, CSS, JS, PHP).<br><br>J’ai pu mettre à profit mes compétences dans de nombreux projets et dans le conception de ce portfolio entièrement réalisé from scratch.<br>Aussi, j'ai beaucoup amélioré mes connaissance de certaines technologies durant mes études, comme Laravel, ou VueJS
+                </p>
+            </div>
+            <div class="basis-1/2" x-data="Faq">
+                <h1 class="text-4xl font-bold text-center">FAQ</h1>
+                <div class="grid mt-4">
+                    <div class="text-center py-5 border-b-[1px] cursor-pointer" x-on:click="toggle()">
+                        <h1 class="text-xl">Question 1</h1>
+                        <div class="submenu-1" x-show="faqOpen" x-transition>
+                            <p class="text text-left p-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, atque aut, blanditiis consectetur corporis dolorem iure libero mollitia neque numquam, porro quibusdam quis repellat vel!</p>
+                        </div>
+                    </div>
+                    <div class="text-center py-5 border-b-[1px] cursor-pointer" x-on:click="toggle2()">
+                        <h1 class="text-xl">Question 2</h1>
+                        <div class="submenu-2" x-show="faqOpen2" x-transition>
+                            <p class="text text-left p-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, atque aut, blanditiis consectetur corporis dolorem iure libero mollitia neque numquam, porro quibusdam quis repellat vel!</p>
+                        </div>
+                    </div>
+                    <div class="text-center py-5 border-b-[1px] cursor-pointer" x-on:click="toggle3()">
+                        <h1 class="text-xl">Question 3</h1>
+                        <div class="submenu-2" x-show="faqOpen3" x-transition>
+                            <p class="text text-left p-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, atque aut, blanditiis consectetur corporis dolorem iure libero mollitia neque numquam, porro quibusdam quis repellat vel!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-24" x-data="Projects" id="portfolio">
+    <div class="container mx-auto px-8">
+        <h1 class="text-4xl font-bold">Portfolio</h1>
+        <select x-model="filter" class="appearance-none border-0 mt-12 outline-0">
+            <option>Web</option>
+            <option>Audiovisuel</option>
+            <option>Communication</option>
+            <option>Tout</option>
+        </select>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 justify-items-center">
+            <template x-for="project in data" class="">
+                <div class="hover:scale-105 duration-300 ease-in-out cursor-pointer" x-show="project.category === filter">
+                    <div class="project-card">
+                        <img :src="`${project.src}`" alt="" class="h-full object-cover object-center">
+                    </div>
+                    <p x-text="`${project.name} | ${project.category}`" class="text-center py-4 font-light"></p>
+                </div>
+            </template>
+        </div>
+    </div>
+</section>
+
+<section id="competences" class="mt-12">
+    <div class="container mx-auto px-8">
+        <h1 class="text-4xl font-bold">Compétences</h1>
+        <p class="text my-6">
+            Au cours de ces dernière années, j'au développé de nombreuses compétences en web, notamment grâce à mes expériences professionnelles passées en entreprise.
+            Ainsi, j'ai pu prendre en main de nombreux outils (PostgreSQL, Symfony, VueJS...) ce qui a particulièrement enrichi mes connaissances.
+        </p>
+        <ul class="mt-3 list [&>li]:py-4">
+            <li>
+                <h3 class="text-xl font-bold">HTML</h3>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa in laboriosam magni, sed.</p>
+            </li>
+            <li>
+                <h3 class="text-xl font-bold">CSS</h3>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa in laboriosam magni, sed.</p>
+            </li>
+            <li>
+                <h3 class="text-xl font-bold">JS (JQuery)</h3>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa in laboriosam magni, sed.</p>
+            </li>
+            <li>
+                <h3 class="text-xl font-bold">PHP (Laravel, Symfony)</h3>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa in laboriosam magni, sed.</p>
+            </li>
+            <li>
+                <h3 class="text-xl font-bold">VueJS (nuxt, Directus)</h3>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa in laboriosam magni, sed.</p>
+            </li>
+            <li>
+                <h3 class="text-xl font-bold">SQL, PostgreSQL</h3>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa in laboriosam magni, sed.</p>
+            </li>
+            <li>
+                <h3 class="text-xl font-bold">Figma</h3>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa in laboriosam magni, sed.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact" class="mb-24">
+    <div class="container mx-auto px-8">
+        <h1 class="text-4xl font-bold mt-24 text-center">Une demande ? contactez-moi !</h1>
+        <form action="" method="post">
+            <div class="grid grid-cols-2 gap-12 mt-12">
+                <input type="text" name="fullname" class="input max-w-96" placeholder="Nom, prénom">
+                <input type="email" name="email" class="input max-w-96" placeholder="Email">
+                <textarea name="message" id="" class="input w-full col-start-1 col-end-3 h-32" placeholder="Message"></textarea>
+                <button class="cta" type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

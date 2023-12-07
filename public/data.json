@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Projet 1",
+    "category": "Web",
+    "src": "https://picsum.photos/1600/900?random=1"
+  },
+  {
+    "name": "Projet 2",
+    "category": "Web",
+    "src": "https://picsum.photos/1600/900?random=2"
+  },
+  {
+    "name": "Projet 3",
+    "category": "Web",
+    "src": "https://picsum.photos/1600/900?random=3"
+  },
+  {
+    "name": "Projet 4",
+    "category": "Communication",
+    "src": "https://picsum.photos/1600/900?random=4"
+  },
+  {
+    "name": "Projet 5",
+    "category": "Communication",
+    "src": "https://picsum.photos/1600/900?random=5"
+  },
+  {
+    "name": "Projet 6",
+    "category": "Communication",
+    "src": "https://picsum.photos/1600/900?random=6"
+  },
+  {
+    "name": "Projet 7",
+    "category": "Audiovisuel",
+    "src": "https://picsum.photos/1600/900?random=7"
+  },
+  {
+    "name": "Projet 8",
+    "category": "Audiovisuel",
+    "src": "https://picsum.photos/1600/900?random=8"
+  },
+  {
+    "name": "Projet 9",
+    "category": "Audiovisuel",
+    "src": "https://picsum.photos/1600/900?random=9"
+  }
+]
